@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="회원가입.css">
+</head>
+<body>
+  <header>
+    <h1>회원가입 [정보입력]</h1>
+  </header>
+  <form action="" method="post">
+    <section class="info">
+      <h3>회원정보 입력</h3>
+      <ul>
+        <li>
+          <label for="id">아이디</label>
+          <input type="text" id="id" placeholder="아이디 입력">
+          <button type="button">중복확인</button>
+        </li>
+        <li>
+          <label for="password1">비밀번호</label>
+          <input type="password" id="password1" placeholder="비밀번호 입력">
+          <input type="password" id="password2" placeholder="비밀번호 확인">
+        </li>
+        <li>
+          <label for="name">이름</label>
+          <input type="text" id="name" placeholder="실명을 입력해주세요">
+        </li>
+        <li>
+          <label for="phone">휴대폰번호</label>
+          <input type="tel" id="phone" placeholder="'-'없이 입력해주세요">
+        </li>
+      </ul>
+    </section>
+    <section class="confirm">
+      <h3>본인인증</h3>
+      <ul>
+        <li>
+          <label for="email">이메일 입력</label>
+          <input type="email" id="email" placeholder="이메일주소 입력">
+          <button type="button">확인메일 발송</button>
+        </li>
+      </ul>
+    </section>
+    <button type="submit" class="complete">가입완료</button>
+  </form>
+</body>
+</html>
