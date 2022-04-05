@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="imges/peng.png" alt="귀여운 팽귄 두마리">
+  <!-- 모든 이미지에 alt값을 넣을 필요는 없음. (그냥 디자인을 위한 이미지일 경우 등) -->
+  <!-- <img src="imges/peng.png" alt=""> -->
+  <!-- alt가 아에 없으면 스크린리더기에서 이미지 파일명을 다 읽어버림. 따라서 alt를 쓰지 않을 경우 비워두기! -->
+  <!-- alt값 넣을땐 이미지에 대한 설명 자세하게 적으면 좋음! (웹 접근성) -->
+
+  <!-- alt 읽지 않음 -->
+  <img src="123.png" alt="">
+  <!-- 파일명을 읽음 -->
+  <img src="123.png" alt=" ">
+  <!-- 파일명을 읽음 -->
+  <img src="123.png" >
+
+
+  <img
+  width="200px"
+  srcset="img/logo_1.png 2x, 
+          img/logo_2.png 3x"
+  src="a.png"
+  alt="test">
+  <!-- width="200px" <- 이미지가 브라우저에 보여지는 크기 -->
+  <!-- img/logo_1.png 2x <- 동일한 면적에 2화소가 들어가는 이미지 
+  mg/logo_2.png 3x <- 동일한 면적에 3화소가 들어가는 이미지임을 브라우저에 알려줌 
+  이 두개 중 브라우저가 최적의 이미지를 골라서 브라우저에 띄우는 것!-->
+
+  <img
+    width="200px" 
+    srcset="img/logo_3.png 700w,
+            img/logo_2.png 600w,
+            img/logo_1.png 300w"
+    src="a.png"
+    alt="test">
+  <!-- width="200px" <- 이미지가 브라우저에 보여지는 크기 -->
+  <!-- img/logo_3.png 700w <- 원본 이미지의 넓이가 700 
+  img/logo_2.png 600w <- 원본 이미지의 넓이가 600
+  img/logo_1.png 300w <- 원본 이미지의 넓이가 300임을 브라우저에 알려줌 
+  이 세개 중 브라우저가 최적의 이미지를 골라서 브라우저에 띄우는 것!-->
+  
+  <!-- w와 x는 같이 사용할 수 없음! -->
+  <!-- src 속성을 유지하는 것은 필수임. 왜냐하면 srcset을 사용할 수 없는 브라우저(Internet Explorer)를 대비해 사용하는 이미지이기 때문.  -->
+    
+
+  <img srcset="imges/3.png 500w, imges/2.png 300w, imges/1.png 150w" 
+  sizes="(min-width: 960px) 500px, (min-width: 640px) 300px, 900px"
+  src="imges/3.png" alt="rabbit">
+  <!-- sizes
+  - (min-width: 960px) 500px -> 뷰포트가 최소 960px이상이면 이미지의 넓이 500px로!
+  - (min-width: 640px) 300px -> 뷰포트가 최소 640px이상 960px미만이면 이미지의 넓이 300px로! (앞에 in-width: 960px가 있기 때문에)
+  - 900px -> 뷰포트가 640px미만이면 900px로! (960px, 640px 둘 다 아닐때) -->
+  <!-- 브라우저는 우리가 제공한 이미지의 원본 사이즈와 뷰포트에 따른 이미지의 사이즈 정보를 통합해 가장 적절한 이미지를 로딩하게됩니다. 최후가 src의 이미지 -->
+
+  <!-- 물론 srcset 속성은 sizes 속성이 없다고 해도 잘 동작하겠지만, 웹표준을 준수하기 위해서는 srcset 속성을 사용하면 그에 맞는 sizes 속성도 반드시 명시되어야 합니다. -->
+  <!-- css와 sizes의 속성이 충돌할 땐, css 속성이 우선임. -->
+  
+  <!-- scrset적을 땐, 이미지가 큰 파일부터 쓰기! -->
+
+
+  <picture>
+    <source srcset="imges/3.png" media ="(min-width: 960px)">
+    <source srcset="imges/peng.png" media =" (min-width: 640px)">
+    <img src="imges/1.png" alt="">
+  </picture>
+  
+  <!-- 
+    - picture → 이미지 자체 or 이미지 포멧이 바뀔때 (다른 이미지일 수 있음!)
+    - img요소의 srcset(s, w) → 이미지의 px이나 사이즈만 바뀔때 (동일 이미지!) -->
+
+
+  <picture>
+    <source srcset="babies.webp" type="image/webp">
+    <source srcset="babies.avif" type="image/avif">
+    <img src="babies.jpeg" alt="귀여운 아기 팽귄들">
+  </picture>
+  <!-- 위에서부터 차례대로 브라우저가 지원하는 포맷인지 탐색하며 만약 지원하지 않는 포맷이라고 판단되면 다음 <source> 요소로 넘어갑니다. 
+  만약 모든 <source> 요소의 이미지 사용이 불가능하면 최후에 <img> 요소의 이미지를 랜더링 합니다. -->
+  <!-- img 안에는 type 속성 못 넣음 -->
+
+</body>
+</html>
