@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <label for="myDevice">현재 사용하고 있는 스마트폰의 제조사를 선택해주세요</label>
+    <select name="device" id="myDevice" size="1"> <!-- 속성과 값의 이름이 같으면 속성만 적어두 됨 (multiple만 적어도 됨)-->
+      <option value="0">선택</option> <!--사용자가 아무것도 선택 안하고 서버로 데이터로 전송된 경우 첫번째 옵션이 자동으로 전송됨. 그것을 막기 위해 아무것도 선택하지않는 옵션을 맨 위에 추가하면 됨! 또는 018_form보기 -->
+      <option value="iphone">아이폰</option>
+      <option value="galaxy" selected>갤럭시폰</option>
+      <option value="ㅜㅜ">LG폰</option>
+    </select>
+
+    <fieldset>
+      <legend>개인정보</legend>
+      <label for="myName">이름</label>
+      <input type="text" name="name" id="myName">
+      <label for="myTel">전화번호</label>
+      <input type="tel" name="tel" id="myTel">
+      <label for="myEmail">이메일</label>
+      <input type="email" name="email" id="myEmail">
+    </fieldset>
+    <fieldset>
+      <legend>개인정보 제공 동의</legend>
+      <label for="checkAgree">개인정보 제공에 동의하십니까?</label>
+      <input type="checkbox" name="agree" id="checkAgree">
+    </fieldset>
+
+    <input type="text" value="제출하세요"> <!--자식태그 가질 수 없음. css로 디자인하는데에 한계가 있음-->
+    <button>버튼</button> <!--자식태그 가질 수 있음. css로 디자인하는데에 할 수 있음-->
+    
+  </form>
+</body>
+</html>
