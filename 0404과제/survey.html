@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>설문조사</title>
+</head>
+<body>
+  <header>
+    <h1>나와 잘 맞는 회사는?</h1>
+    <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미 없다.</p>
+  </header>
+  <!-- 줄바꿈할때 <br> 보단 div로 감싸는것이 css에서 디자인 할때 좋음. -->
+  <!--
+  <div>
+    <input type="radio" id="ne" name="like">
+    <label for="ne">네</label>
+  </div>-->
+  <form action="" method="post">
+    <fieldset>
+      <legend>다음 문자중에 왠지 마음에 드는 것을 하나 고르세요</legend>
+      <input type="radio" id="ne" name="like">
+      <label for="ne">네</label>
+      <br>
+      <input type="radio" id="ka" name="like">
+      <label for="ka">카</label>
+      <br>
+      <input type="radio" id="ra" name="like">
+      <label for="ra">라</label>
+      <br>
+      <input type="radio" id="ku" name="like">
+      <label for="ku">쿠</label>
+      <br>
+      <input type="radio" id="be" name="like">
+      <label for="be">베</label>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두 골라주세요.</legend>
+      <input type="checkbox" id="kakao" name="messenger">
+      <label for="kakao">카카오톡</label>
+      <br>
+      <input type="checkbox" id="line" name="messenger">
+      <label for="line">라인</label>
+      <br>
+      <input type="checkbox" id="insta" name="messenger">
+      <label for="insta">인스타그램 디엠</label>
+      <br>
+      <input type="checkbox" id="nate" name="messenger">
+      <label for="nate">네이트온</label>
+      <br>
+      <input type="checkbox" id="buddy" name="messenger">
+      <label for="buddy">버디버디</label>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>면접에서 자신의 포부를 한 문장으로 얘기한다면?</legend>
+      <textarea name="plan" id="interview" cols="50" rows="1" placeholder="내 답변"></textarea>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에 들어가기 적전, 자기 자신에게 해주고 싶은말은?</legend>
+      <textarea name="myself" id="self" cols="50" rows="1" placeholder="내 답변"></textarea>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?</legend>
+      <select name="question" id="techQuestion" required>
+        <option value="">선택</option>
+        <option value="q1">q1</option>
+        <option value="q2">q2</option>
+        <option value="q3">q3</option>
+      </select>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>취업을 희망하는 날짜를 선택해주세요</legend>
+      <p>날짜</p>
+      <input type="date" id="date" name="jobDate">
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>업무를 시작 하기에 가장 적당한 시간을 고르세요</legend>
+      <p>시간</p>
+      <input type="time" id="time" name="workTime">
+    </fieldset>
+    <br>
+    <button type="submit" id="submit_btn" name="submit" title="제출">제출</button>
+    <button type="reset" id="reset_btn" name="reset" title="초기화">양식 지우기</button>
+  </form>
+</body>
+</html>
