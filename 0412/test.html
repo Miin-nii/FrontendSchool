@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .wrap {
+                border: 4px solid blue;
+            }
+
+            .content2 {
+                float: left;
+                margin: 5px;
+                height: 20px;
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="content content2">내용1</div>
+            <div class="content">내용2</div>
+        </div>
+
+        <!--참고: 내용1에만 float을 주었을 경우 내용2는 block요소인 만큼 가로 100%를 차지하는데
+            내용1 float초기화 하기 전에 내용1과 내용2의 텍스트들은 겹치지 않음. 
+            즉, '텍스트'는 floating된 요소를 알아본다.
+            -> 이유: float은 원래 그림을 따라 흐르는 텍스트 레이아웃을 웹에서 구현하기 위해 탄생하였으므로 텍스트만큼은 floating된 요소를 알아보는 것.-->
+    </body>
+</html>
