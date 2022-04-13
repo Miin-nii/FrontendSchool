@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            .container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center; /*수평 중앙정렬*/
+                align-items: center; /*수직 중앙정렬*/
+                /* flex-direction: row-reverse; */
+                /* flex-direction: column; */
+                /* flex-direction: column-reverse; */
+                height: 500px;
+                background-color: beige;
+                border: 2px solid black;
+            }
+            .box {
+                background-color: pink;
+                border: 2px solid black;
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 100px; /*height와 line-height의 값이 같을 경우 수직 중앙정렬이 됨*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+        </div>
+    </body>
+</html>
