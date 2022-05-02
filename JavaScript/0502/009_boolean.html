@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let value1 = 30;
+        let value2 = 50;
+        
+        console.log(value1 > value2);
+        console.log(value1 >= value2);
+        console.log(value1 < value2);
+        console.log(value1 <= value2);
+        console.log(value1 == value2); // 값 비교. 타입과 관계없이 타입에 맞춰서 비교
+        console.log(value1 === value2); // 값, 타입 둘 다 비교.
+        console.log('------------');
+
+        value1 = 30;
+        value2 = '30'; // 한번 선언한 것은 let 안 써줘도 됨
+        console.log(value1 == value2); // 형변환을 하고 비교하기 때문에 속도가 ===보다 ==이 느림. 따라서 ===많이 사용
+        console.log(value1 === value2);
+        console.log('------------');
+
+        console.log(value1 != value2); // 값 비교 (형변환함)
+        console.log(value1 !== value2); // 값, 타입 둘 다 비교
+        console.log('------------');
+
+        value1 = true;
+        value2 = false;
+        console.log(!value2); // ! : 부정
+        console.log(!!value2); // 강조!! 정말 많이 사용.
+
+    </script>
+</body>
+</html>
