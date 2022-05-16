@@ -1,0 +1,13 @@
+$valid-side: left, center, right;
+
+.screen-box {
+    text-align: nth($valid-side, 1);
+}
+
+.index {
+    z-index: index($valid-side, right);
+}
+
+.add {
+    list: append($valid-side, test);
+}

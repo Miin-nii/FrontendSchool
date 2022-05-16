@@ -1,0 +1,10 @@
+@for $hojun from 1 through 7 {
+    .photo-box-#{$hojun} {
+        // #{} 벗기면 클래스 명으로 인식함
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        font-size: $hojun + px;
+        //font-size: ($hojun)px; // 1칸 건너 뜀
+    }
+}

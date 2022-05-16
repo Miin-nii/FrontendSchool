@@ -1,0 +1,7 @@
+.one {
+    $value: red; // 지역변수, 지연에서만 사용 가능
+    color: $value;
+}
+.tomw {
+    color: $value;
+}

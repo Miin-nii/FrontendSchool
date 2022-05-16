@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,IAAI,CAAC;EACD,SAAS,EAHJ,IAAI;EAIT,KAAK,EAPA,IAAI;CAQZ;;AAED,AAAA,IAAI,CAAC;EACD,KAAK,EAVA,IAAI;CAWZ;;AAED,AAAA,MAAM,CAAC;EACH,KAAK,EAbF,IAAI;CAcV",
+    "sources": [
+        "007_변수선언.scss"
+    ],
+    "names": [],
+    "file": "007_변수선언.css"
+}

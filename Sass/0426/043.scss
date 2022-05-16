@@ -1,0 +1,29 @@
+.card {
+    width: 100px;
+    height: 200px;
+
+    @media screen and (min-width: 390px) {
+        background-color: red;
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-color: green;
+    }
+}
+.card:hover {
+    width: 200px;
+    height: 300px;
+}
+
+.font {
+    @media screen and (min-width: 390px) {
+        font-size: 16px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 18px;
+    }
+}
+
+// 미디어쿼리만 모아서 맨 밑에 따로 적어주는 것이 좋음! (CSS와 같음)
+// 왜냐하면 순서가 꼬일 수 있기 때문에

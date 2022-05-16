@@ -1,0 +1,13 @@
+@mixin one {
+    width: 100px;
+    // @content;
+    height: 100px;
+    @content;
+    color: white;
+}
+
+a {
+    @include one {
+        background-color: black;
+    }
+}

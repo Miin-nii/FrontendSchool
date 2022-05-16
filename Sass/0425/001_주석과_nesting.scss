@@ -1,0 +1,18 @@
+// 한 줄 주석입니다. css로 변환될 때 한 줄 주석은 사라짐. 왜냐하면 css에는 한 줄 주석이 없음.
+/* 두 줄 주석입니다. */
+ul {
+    li {
+        color: red;
+        font-size: 10px;
+    }
+}
+
+.one {
+    color: red;
+    .two {
+        color: green;
+    }
+    .three {
+        color: blue;
+    }
+}
