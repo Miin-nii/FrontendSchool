@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <style>
+            .container {
+                height: 100vh;
+                display: grid;
+                /* grid-template-columns: 200px 200px 500px; */
+                grid-template-columns: 1fr 1fr 1fr;
+                /* grid-template-columns: repeat(3, 1fr); */
+                /* grid-template-columns: 200px 1fr; */
+                /* grid-template-columns: 100px 200px auto; */
+                /* grid-template-columns: repeat(auto-fill, minmax(20%, auto)); */
+                /* auto-fill -> 빈공간 남으면 빈공간 그대로 남음 */
+                /* grid-template-columns: repeat(auto-fit, minmax(20%, auto)); */
+                /* autofill -> 빈공간 생기지 않도록 채움 */
+                /* ---------------------------------------------- */
+                /* grid-template-rows: 200px 200px 500px; */
+                grid-template-rows: 1fr 1fr 1fr;
+                /* grid-template-rows: repeat(3, 1fr); */
+                /* grid-template-rows: 200px 1fr; */
+                /* grid-template-rows: 100px 200px auto; */
+                /* grid-template-rows: repeat(3, minmax(100px, auto)); */
+                /* rows 최소: 100px, 최대: auto
+                    -> 아무리 내용의 양이 적더라도 최소한 높이 100px은 확보하고, 내용이 많아 100px이 넘어가면 알아서 늘어나도록 처리 */
+                /* columns 최소: 100px, 최대: auto
+                    -> 아무리 내용의 양이 적더라도 최소한 넓이 100px은 확보하고, 내용이 많아 100px이 넘어가면 알아서 늘어나도록 처리 */
+                /* grid-auto-rows: minmax(100px, auto); */
+                /* ---------------------------------------------- */
+                /* row-gap: 10px; */
+                /* column-gap: 20px; */
+                /* gap: 10px 20px;  */
+                /*row column*/
+                gap: 20px; /*row, colunm 간격 둘다 20px*/
+            }
+            .item {
+                background-color: pink;
+                border: solid 1px black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">F</div>
+            <div class="item">G</div>
+            <div class="item">H</div>
+            <div class="item">I</div>
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">F</div>
+            <div class="item">G</div>
+            <div class="item">H</div>
+            <div class="item">I</div>
+        </div>
+    </body>
+</html>

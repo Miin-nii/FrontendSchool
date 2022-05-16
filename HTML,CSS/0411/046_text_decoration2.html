@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            .container {
+                border: 1px solid black;
+                line-height: 1;
+                margin: 10px 0;
+            }
+            .one {
+                /* 인라인 요소가 이어저 나올 경우 이어지는 인라인 요소의 높이를 맞추기 위해 사용하는 것 */
+                /* vertical-align: baseline; */
+                /* vertical-align: top; */
+                /* vertical-align: middle; */
+                font-size: 10px;
+            }
+            .two {
+                font-size: 20px;
+            }
+            .three {
+                font-size: 40px;
+            }
+            img {
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <sapn class="one">Lorem ipsum</sapn>
+            <sapn class="two">dolor sit amet</sapn>
+            <sapn class="three">consectetur adipisicing</sapn>
+        </div>
+        <div class="container">
+            <img
+                width="100px"
+                src="https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg"
+                alt=""
+            />
+        </div>
+    </body>
+</html>

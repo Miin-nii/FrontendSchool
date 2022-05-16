@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>단위</title>
+        <style>
+            body {
+                font-size: 10px;
+            }
+            p {
+                font-size: 2em;
+            }
+            div {
+                font-size: 2em;
+                /* 부모폰트사이즈 * 2 (body사이즈 * 2 아님!) */
+            }
+            .one {
+                font-size: 2rem;
+                /* 최상위 요소의 글자크기(body의 폰트사이즈) * 2 */
+            }
+            .two {
+                width: 50%;
+                /* 부모 width의 50% */
+                height: 200px;
+                background-color: red;
+            }
+            .three {
+                width: 500px;
+                height: 400px;
+                background-color: blue;
+            }
+            .four {
+                width: 50vw;
+                /* 전체화면의 50% */
+                height: 200px;
+                background-color: red;
+            }
+            .five {
+                width: 500px;
+                height: 400px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>hello</h1>
+        <p>hello</p>
+        <div>
+            <div>
+                <div>hello</div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="one">hello</div>
+            </div>
+        </div>
+        <div class="two"></div>
+        <br />
+        <div class="three">
+            <div class="two"></div>
+        </div>
+        <br />
+        <div class="five">
+            <div class="four"></div>
+        </div>
+    </body>
+</html>

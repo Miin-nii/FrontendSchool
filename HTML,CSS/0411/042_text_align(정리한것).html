@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            div {
+                border: 5px solid black;
+                margin: 10px;
+                width: 800px;
+            }
+            .width-full {
+                width: 100%;
+            }
+            .text_center {
+                text-align: center;
+            }
+            .text_left {
+                text-align: left;
+            }
+            .text_right {
+                text-align: right;
+            }
+            span {
+                border: 5px solid blue;
+            }
+            h1 {
+                display: inline-block;
+            }
+
+            .one {
+                margin: 0 auto;
+            }
+            .two {
+                display: block;
+                width: 50%;
+                margin: 0 auto;
+            }
+            .transform {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+            1. 'text-align: center'는 (-> 자식인 요소를 중앙 정렬할 경우!)
+                1.1 자식인 인라인
+                1.2 자식인 블록
+                1.3 자식인 인라인 블록
+                1.4 text
+                -> 다 잘 먹힘
+            2. margin: 0 auto (-> block요소를 중앙 정렬할 때 사용!)
+                2.1 부모에게 적용할 경우 부모 자체가 통째로 중앙정렬됨
+                2.2 블럭요소가 부모의 전체 width를 가지고 있을 경우 원하는 중앙 정렬을 얻을 수 없다.
+                2.3 자기 자신이 inline-block인 경우에는 사용할 수 없다. (인라인에 마진 속성이 먹히지 않음)
+                2.4 inline요소를 display: block으로 바꾼다음 width를 부모보다 좁게 설정하면 사용할 수 있다.
+            3. transform: translate(-50%)와 left(50%)
+                - transform: translate(-50%) -> 자기자신크기에서 50%만큼 왼쪽으로 이동!
+            
+            2번과 3번의 위치가 조금 다른데 이유는?
+            : 맨처음 div에 margin: 10px를 주었음. 
+            그래서 3.번에는 마진10px이 그대로 먹히고, 2.번엔 마진0을 다시 적용시켜줘서 맨처음 마진10px은 묻힌것.
+        -->
+
+        <div class="text_left">
+            <span>왼쪽 정렬</span>
+        </div>
+        <div class="text_right">
+            <span>오른쪽 정렬</span>
+        </div>
+        <div class="text_center">
+            <span>중앙 정렬</span>
+        </div>
+
+        <!-- 1. 'text-align: center' -->
+        <div class="text_center">
+            <span>중앙 정렬</span>
+            <p>hello world</p>
+            <h1>hello world</h1>
+            <form action="">
+                <input type="text" />
+            </form>
+            hello
+        </div>
+
+        <!-- 2. margin: 0 auto -->
+        <!-- (1) -->
+        <div class="one">
+            <span>hello world margin 0 auto</span>
+        </div>
+        <!-- (2) -->
+        <div class="one width-full">
+            <span>hello world margin 0 auto</span>
+        </div>
+        <!-- (3) -->
+        <div>
+            <span class="one">hello world margin 0 auto</span>
+        </div>
+        <!-- (4) -->
+        <div>
+            <span class="two">hello world margin 0 auto</span>
+        </div>
+
+        <!-- 3. transform: translate(-50%)와 left(50%) -->
+        <div>
+            <span class="transform">hello world </span>
+        </div>
+    </body>
+</html>
