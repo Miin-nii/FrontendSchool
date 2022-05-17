@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Factory() {}
+        // const item = new Factory();
+        // item은 Factory의 인스턴스
+
+        // function NewFactory(name) {
+        //     this.name = name
+        //     // 여기서 this는 robot1 -> 생성자 함수 안의 this: 생성자가 만들언낸 객체. 즉, 인스턴스를 가리킴
+        //     this.sayYourName = function(){
+        //         console.log(`삐리리리 제 이름은 ${this.name}입니다.`);
+        //     }
+        // }
+
+        // const robot1 = new NewFactory('재현'); 
+        // // 생성자함수는 return없어도 자동으로 반환해줌
+        // // robot1은 NewFactory의 인스턴스
+
+        const foods = ['짜장면', '볶음밥', '해장국', '치킨'];
+
+        function FoodBot(foodNames){
+            this.menu = foodNames;
+            this.sayMenu = function(){
+            console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+            // Math.random() -> 0이상 1미만 숫자가 나옴 (0 ~ 0.999999,,,)
+            // Math.random() * 10 -> 0이상 10미만 사이 숫자가 나옴 (0 ~ 9.999999,,,,)
+            // Math.random() * foods.length -> 0이상 4미만 숫자가 나옴 (0 ~ 3.99999999,,,)
+            // Math.floor(Math.random() * foods.length) -> 0이상 3이하 숫자가 나옴
+
+            }
+        }
+        
+        const foodBotMark1 = new FoodBot(foods);
+    </script>
+</body>
+</html>

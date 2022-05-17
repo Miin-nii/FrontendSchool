@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function NewFactory2(name){
+            this.name = name
+        }
+
+        NewFactory2.prototype.sayYourName = function () {
+            //prototype: 메서드 저장 공간!
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+        
+    </script>
+</body>
+</html>

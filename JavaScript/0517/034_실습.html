@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+    <script>
+        const txts = document.querySelectorAll('p');
+        const btns = document.querySelectorAll('button');
+
+        // 방법1
+        // for(let i = 0; i < txts.length; i++) {
+        //     txts[i].addEventListener('click', (event) => {
+        //         alert(event.target.textContent.slice(0, -2));
+        //         // console.log(txts);
+        //     })
+        // }
+
+        // 방법2
+        // txts.forEach((item) => {
+        //     item.addEventListener('click', (event) => {
+        //     alert(event.target.textContent.slice(0, -2));
+        //     })
+        // })  
+        //txts <- txts는 유사배열인 nodelist. nodelist에서 forEach를 사용하는 것은 ie에서 지원하지 않음.
+        // nodelist.forEach를 ie에서도 쓸 수 있게 -> 방법3
+
+        // 방법3
+        Array.prototype.forEach.call(txts, (item) => {
+            item.addEventListener('click', (event) => {
+            alert(event.target.textContent.slice(0, -2));
+            })
+        }) 
+        // prototype: 객체가 공유하는 메소드를 저장하는 공간 (객체와 메소드의 연결고리)
+        // call: txts가 forEach라는 메소드를 원래 갖고있는 것처럼 바꿔줌 -> 따라서, txts가 forEach를 ie에서도 사용할 수 있게함!
+        // call(p, 여기) 에는 forEach의 매개변수
+
+
+        for (const item of btns) {
+            item.addEventListener('click', (event) => {
+                let result = confirm('삭제하시겠습니까?');
+                // 확인 : true, 취소 : false
+                event.stopPropagation(); // 부모 p의 이벤트실행을 막아줌
+                if(result){
+                    item.parentElement.remove();
+                }
+            })
+        }
+    </script>
+</body>
+</html>

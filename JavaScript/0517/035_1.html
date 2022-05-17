@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const me = {
+            name : '한재현',
+            address : '제주도 제주시 인다 1길',
+            phoneNum : '010-8001-6536',
+            canWalk : function(){
+                console.log('재현이가 걷는다.');
+            },
+            teaching : function(student){
+                student.levelUp();
+            }
+        }
+
+        const student = {
+            level: 1,
+            levelUp : function(){
+                this.level++; 
+                // this는 student를 가리킴 
+                // 함수의 this는 함수를 호출한 객체를 가리킴
+            }
+        }
+    // me.teaching(student)
+
+        const min = {
+            name : '효민',
+            address : '대구',
+            canWalk: function(puppy) {
+                puppy.happy();
+            }
+        }
+
+        const miso = {
+            happiness: 1,
+            happy: function(){
+                this.happiness++;
+            }
+        }
+
+        const darong = {
+            happiness: 1,
+            happy: function(){
+                this.happiness++;
+            }
+        }
+    </script>
+</body>
+</html>
