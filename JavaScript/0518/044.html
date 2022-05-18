@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Robot {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        }
+
+        class BabyRobot extends Robot {
+            constructor(name){
+                super(name); // super는 부모생성자를 가리킴
+                this.ownName = '아이크';
+                // super는 반드시 this보다 앞에 있어야함!
+                // super는 extends 키워드 사용할때에만 사용될 수 있음!
+            }
+            // constructor가 없으면 자동으로 부모 constructor를 상속받음
+            
+            sayBabyName(){
+                this.sayYourName(); // 부모의 함수를 사용할 수 있음
+                console.log('Suceeding you, Father!');
+            }
+        }
+
+        const baby = new BabyRobot('재현');
+
+    </script>
+</body>
+</html>

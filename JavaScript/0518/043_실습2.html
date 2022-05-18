@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // const min = {
+        //     name : '효민',
+        //     address : '대구',
+        //     canWalk: function(puppy) {
+        //         puppy.happy();
+        //     }
+        // }
+
+        // const miso = {
+        //     happiness: 1,
+        //     happy: function(){
+        //         this.happiness++;
+        //     }
+        // }
+
+        // const darong = {
+        //     happiness: 1,
+        //     happy: function(){
+        //         this.happiness++;
+        //     }
+        // }
+
+        //-----------------------------------------
+
+        class Min {
+            constructor(name, address){
+                this.name = name;
+                this.address = address;
+            }
+
+            canWalk(puppy){
+                puppy.happy();
+            }
+        }
+
+        class Miso {
+            constructor(happiness){
+                this.happiness = happiness;
+            }
+            happy(){
+                this.happiness++;
+            }
+        }
+
+        class Darong {
+            constructor(happiness){
+                this.happiness = happiness;
+            }
+            happy(){
+                this.happiness++;
+            }
+        }
+
+        const min = new Min('Hyomin', '대구');
+        const miso = new Miso(1);
+        const darong = new Darong(1);
+
+    </script>
+</body>
+</html>

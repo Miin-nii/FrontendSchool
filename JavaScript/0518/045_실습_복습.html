@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Sausage {
+            constructor(eli1, eli2) {
+                this.ingredient1 = eli1;
+                this.ingredient2 = eli2;
+            }
+            taste(){
+                console.log(`${this.ingredient1}와 ${this.ingredient2} 맛이 난다!`);
+            }
+        }
+
+        const sausage = new Sausage('불고기', '파');
+
+        class FireSausage extends Sausage {
+            constructor(eli1, eli2, eli3) {
+                super(eli1, eli2);
+                this.ingredient3 = eli3;
+            }
+            taste(){
+                console.log(`${this.ingredient1}와 ${this.ingredient2} 맛이 난다! ${this.ingredient3} 맛도 난다!`);
+            }
+        }
+
+        const fireSausage = new FireSausage('불고기', '파', '불');
+
+    </script>
+</body>
+</html>

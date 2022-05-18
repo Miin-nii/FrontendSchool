@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 모듈 패턴
+        function Person(){
+            let age = 15;
+
+            return {
+                getAge: function(){ return age }, // 선언된 age 값 출력해주는 함수
+                setAge: function(data){ age = data } // age 값 변경해주는 함수
+            }
+            // return을 함으로써 함수 Person은 종료가 되었음 
+            // & person이라는 변수에 { getAge: function(){ return age }, setAge: function(data){ age = data }}가 할당 되었음
+        }
+
+        const person = Person();
+        console.log(person.getAge()); // 15 
+        console.log(person.age); // undefined
+        person.setAge(40);
+        console.log(person.getAge()); // 40
+
+
+        // 함수 Person이 종료되어도 age와 내부함수인 getAge,setAge는 연결되어 있어서 age 값에 접근할 수 있다!
+        // 외부에서 접근할 수 없는 공간(age)이 만들어진 것!
+        // person.age 처럼 외부에서 직접적으로 접근할 수 없는 변수(공간)을 만들기 위한 '테크닉'-> 클로저
+        // 클로저는 보통 중요한 정보를 다룰때 사용함
+
+        //----------------------------------------------------------------------------
+
+        // 사용자 정의 타입 패턴
+        function PersonType(){
+            this.age = 35;
+        }
+        PersonType.prototype.getAge = function(){
+            return this.age
+        }
+
+        const person2 = new PersonType();
+        console.log(person2.getAge()); // 35
+        console.log(person2.age); // 35
+
+        // 외부에서 접근도가능하고, 값 변경도 됨,,
+        // 인스턴스 안의 프로퍼티에 접근하지 못하도록 하기 위해선 -> 클로저 사용
+
+        //-----------------------------------------------------------------
+
+        // 모듈 + 사용자 정의 타입 혼합 패턴
+        // 비공개 변수를 포함한 타입을 생성할 때 사용
+        function PersonType2(){
+            let age = 25;
+
+            function innerPersonType(){}
+
+            innerPersonType.prototype.getAge = function(){
+                return age;
+            }
+
+            return innerPersonType; // PersonType2 종료 & innperPersonType을 Person3에 할당
+        }
+
+        const Person3 = PersonType2();
+        const person3 = new Person3();
+        console.log(person3.getAge()); // 25
+        console.log(person3.age); // undefined
+        // 외부에서 접근하지 못한는 폐쇄적인 공간이 만들어진 것!
+
+
+        // 즉시실행 함수를 사용하여 좀 더 깔끔하게 코드 작성!
+        const PersonType3 = (
+            function () {
+                let age = 15;
+
+                function innerPersonType() { }
+
+                innerPersonType.prototype.getAge = function () {
+                    return age;
+                }
+
+                return innerPersonType; // 외부함수 종료 & 내부함수 innerPersonType을 personWithSecret에 할당 
+            }
+        )();
+
+        const personWithSecret = new PersonType3();
+        console.log(personWithSecret.getAge()); // 15
+        console.log(personWithSecret.age); // undefined
+
+    </script>
+</body>
+</html>

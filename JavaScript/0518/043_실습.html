@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // function Robot(name, number){
+        //     this.name = name;
+        //     this.number = number;
+        // }
+        // Robot.prototype.sayYourInfo = function(){
+        //     console.log(`이름: ${name}, 번호: ${number}`);
+        // }
+
+        // const bot = new Robot('Min', '010-0000-0000');
+
+
+        class RobotClass {
+            constructor(name, number){
+                this.name = name;
+                this.number = number;
+            }
+
+            sayYourInfo(){
+                console.log(`이름: ${this.name}, 번호: ${this.number}`);
+            }
+        }
+
+        const bot1 = new RobotClass('Min', '010-0000-0000');
+
+
+    </script>
+</body>
+</html>

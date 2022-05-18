@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Sausage {
+            constructor(ingred1, ingred2) {
+                this.ingredent1 = ingred1;
+                this.ingredent2 = ingred2;
+            }
+            taste(){
+                console.log(`${this.ingredent1}와 ${this.ingredent2} 맛이 난다!`);
+            }
+        }
+
+        const sausage = new Sausage('소고기', '파');
+
+        class FireSausage extends Sausage {
+            taste(){
+                console.log(`${this.ingredent1}와 ${this.ingredent2} 맛이 난다! 불맛도 난다!`);
+            }
+        }
+        // constructor를 생략해서 부모의 constructor를 그대로 상속받음
+
+        const fireSausage = new FireSausage('소고기', '파');
+
+
+        // class FireSausage extends Sausage {
+        //     constructor(ingred1, ingred2, ingred3){
+        //         super(ingred1, ingred2);
+        //         this.ingredent3 = ingred3;
+        //     }
+
+        //     taste(){
+        //         console.log(`${this.ingredent1}와 ${this.ingredent2} 맛이 난다! ${this.ingredent3}맛도 난다!`);
+        //     }
+        // }
+
+        // const fireSausage = new FireSausage('소고기', '파', '불');
+
+    </script>
+</body>
+</html>

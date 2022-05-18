@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // class Robot {
+        
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    
+    //     sayYourName() {
+    //         console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+    //     }
+    // }
+    
+    // const bot = new Robot('smith');
+    
+    // bot.name // smith
+
+    //-------------------------------------------------------------------------
+
+        class Robot {
+            #password
+            
+            constructor(name, pw) {
+                this.name = name;
+                this.#password = pw;
+            }
+        
+        
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        
+            // getPassword() { // getter
+            //     return this.#password
+            // }
+        
+            // setPassword(pw) { // setter
+            //     this.#password = pw;
+            // }
+
+            get password() {
+                return this.#password
+            }   
+
+            set password(pw) {
+                this.#password = pw;
+            }
+        }
+
+        const bot = new Robot('min', '123');
+        
+        // getter, setter 의 간편버전 : get, set -> 객체의 property에 접근하듯이 접근
+        // 생성자 함수에서는 클로저 사용, class에서는 getter(get)와 setter(set) 사용
+        
+        // get, set -> 비공개 프로퍼티에 너무 쉽게 접근할 수 있다는 단점이 있다.
+    </script>
+</body>
+</html>
