@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // case 1
+        var me = { age: 30 };
+        var you = me;
+        // { age: 30 }를 참조하는 카운트: 2
+
+        me = null;
+        // { age: 30 }를 참조하는 카운트: 1
+        // you와 { age: 30 }가 연결되어 있음
+
+        you = null;
+        // { age: 30 }를 참조하는 카운트: 0 => 가비지 컬렉션 대상이 됨
+
+
+        // case 2 - 순환참조
+        var x = {
+            y: {
+                z: 1
+            }
+        }
+        // x가 참조하는 객체는 obj1, y가 참조하는 객체는 obj2
+
+        var a = x; // obj1 참조 카운트: 2 (x, a)
+        x = 1; // obj1 참조 카운트: 1 (a)
+
+        var b = a.y; // obj2 참조 카운트: 2 (a.y, b)
+        a = 2; // obj2 참조 카운트: 1 (b), obj1 참조 카운트: 0
+        // obj2를 가지고있는 obj1은 참조 카운트가 0이어도 가비지 컬렉터가 obj1을 삭제하지 못함 (obj2의 참조 카운트가 0이 되어야만 obj1도 사라짐)
+        // -> obj1이 불필요하게 남아있기 때문에 '메모리 누수' 발생!
+
+        // 순환참조는 마크스위프 알고리즘을 통해 해결할 수 있음!
+
+        
+        // case 3 - 클로져 메모리 누수문제
+        function outer(){
+            let privateVal = ['test'];
+
+            function getPrivate(){ // getter 함수라고도 할 수 있음!
+                return privateVal;
+            }
+
+            return getPrivate;
+        }
+
+        const private = outer(); // outer 종료. but getPrivate과 연결되어 있기 때문에 가비지컬렉터가 삭제는 못함
+        let secretVal = private(); // get privateVal 종료 (나중에 secretVal = null을 하기 위해 let 사용)
+
+        console.log(secretVal);
+        secretVal = null; // or undefined; or 1(다른값)
+
+        // secretVal이 남아있는한 (['test']를 outer가 갖고있으므로) (사용되지 않아도) 함수 outer는 계속 살아있음 -> 메모리 누수문제 발생
+        // 따라서, 나중엔 secretVal을 다 쓰고나면 종료해주어야 함. (secretVal = null; // or undefined; or 1(다른값))
+
+    </script>
+</body>
+</html>

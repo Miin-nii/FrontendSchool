@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function outer(){
+            let val = 'test';
+
+            function inner(){
+                console.log(val);
+            }
+            
+            return inner;
+        }
+
+        const innerFunc = outer();
+
+        innerFunc();
+
+        // 스코프체인으로 인해 inner의 상위 스코프는 outer라는 것을 알 수 있음
+
+        // lexical scope(정적 스코프) : '맥락에 따라 (쓰여있는대로)' 함수의 상위 스코프가 결정되는 스코프
+        // -> 쓰여진 대로 상위 스코프가 결정되기 때문에 inner의 상위 함수는 다시 쓰지 않는 이상 바뀌지 않음
+
+        // dynamic scope(동적 스코프) : 함수가 '실행되는 시점'에서 함수의 상위 스코프가 결정됨
+
+        // 동적 스코프 예시 - 언어 '펄(?)'
+        // sub add {
+        //     $balance += shift;
+        // }
+
+        // sub transaction_a {
+        //     local $balance = 0;
+        //     say add(1);
+        //     transaction_b();
+        //     say add(100);
+        // }
+
+        // sub transaction_b {
+        //     local $balance = 5;
+        //     say add(10);
+        // }
+        // -> JS에서 add 라는 함수를 실행시 balance가 정의되지 않았다고 에러가 뜨겠지만,
+        // 펄에서는 동적스코프를 체택하고 있기 때문에 에러가 뜨지 않고 
+        // add함수가 실행되는 곳에서 balance가 정의되어있다면 잘 작동함
+
+    </script>
+</body>
+</html>
